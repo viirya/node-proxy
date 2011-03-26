@@ -413,7 +413,7 @@ Handle<Value> NodeProxy::Create(const Arguments& args) {
 	//indexed property handlers
 	temp->SetIndexedPropertyHandler(GetIndexedProperty, 
 									SetIndexedProperty, 
-									QueryIndexedProperty, 
+									QueryIndexedPropertyInteger, 
 									DeleteIndexedProperty);
 	
 	Local<Object> instance = temp->NewInstance();
@@ -505,7 +505,7 @@ Handle<Value> NodeProxy::CreateFunction(const Arguments& args) {
 	
 	instance->SetIndexedPropertyHandler(GetIndexedProperty, 
 										SetIndexedProperty, 
-										QueryIndexedProperty, 
+										QueryIndexedPropertyInteger, 
 										DeleteIndexedProperty);
 	
 	Local<Function> fn = temp->GetFunction();
